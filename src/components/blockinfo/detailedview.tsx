@@ -27,7 +27,8 @@ import {
 
 } from '@chakra-ui/react';
 import { MdFingerprint, MdTimeline } from 'react-icons/md';
-import ReactJson from 'react-json-view';
+import JsonView from 'react18-json-view';
+import 'react18-json-view/src/style.css';
 
 
 
@@ -349,12 +350,11 @@ const TabsCard = ({view, bg} : {view:string,bg:string})=>{
         {view==="comprehensive" && <>
             <TabPanel>
       <Box style={{ maxHeight: '400px', overflowY: 'auto', overflowX: 'auto', padding: '10px', backgroundColor: '#2d2d2d', borderRadius: '8px' }}>
-  <ReactJson
+  <JsonView
     src={blockData}
-    theme="tomorrow"
     collapsed={3}
-    displayDataTypes={false}
     style={{ backgroundColor: 'transparent', padding: '10px' }} 
+    dark={true}
   />
 </Box>
 
